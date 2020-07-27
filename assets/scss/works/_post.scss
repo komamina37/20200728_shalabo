@@ -1,0 +1,70 @@
+.page-detailContainar {
+  &.description {
+    font-size: 16px;
+    $ulem: 16px;
+    @include sp {
+      $ulem: 14px;
+    }
+    .page-detailDesc {
+      h4 {
+        font-size: #{$ulem};
+        font-weight: bold;
+        letter-spacing: 1.2px;
+        line-height: 1.5;
+        width: calc(100% - (40px * 2));
+        @include sp {
+          // font-size: 0.875em;
+        }
+      }
+      ul {
+        list-style: disc;
+        padding: 0 0 0 calc(#{$ulem} * 2);
+        @include sp {
+          padding: 0 0 0 calc(#{$ulem} + 4px);
+        }
+      }
+      .containar {
+        position: relative;
+        z-index: 1;
+        padding: 32px 32px 48px;
+        @include sp {
+          padding: 16px 24px 32px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--color_font01);
+          opacity: 0.08;
+          border-radius: 16px;
+          @include sp {
+            border-radius: 8px;
+          }
+        }
+      }
+
+      ul + h4 {
+        margin-top: 24px;
+        @include sp {
+          margin-top: 16px;
+        }
+      }
+      h4 + ul {
+        margin-top: 8px;
+        @include sp {
+          margin-top: 4px;
+        }
+      }
+      p + .containar {
+        margin-top: 32px;
+      }
+      p + p {
+        margin-top: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+Typekit.load({ async: true });

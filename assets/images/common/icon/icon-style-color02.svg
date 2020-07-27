@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0149162927 0.013859122 19.9486361 0.013859122 19.9486361 19.0712195 0.0149162927 19.0712195"></polygon>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btn_color-style-copy" transform="translate(3.000000, 3.000000)">
+            <g id="color-style_wrapper_color02" transform="translate(0.090732, 0.968780)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip"></g>
+                <path d="M11.1539836,2.06248741 C13.1218665,0.0946396098 16.7762002,0.016739122 17.1408012,0.013859122 C21.06445,4.53953327 20.876126,11.3957596 16.5747758,15.6970747 C12.0759348,20.1959508 4.78187824,20.1959508 0.283037268,15.6970747 C0.191579707,15.6056523 0.102686049,15.5125791 0.0149162927,15.4188386 C0.357390439,15.3858591 3.41728507,15.0284581 5.83918946,12.6065889 C9.40350556,9.04223766 7.17519337,6.04127766 11.1539836,2.06248741" id="color-style_color02" fill="#F7FFD8" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

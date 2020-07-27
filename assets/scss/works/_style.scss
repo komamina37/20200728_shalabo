@@ -1,0 +1,190 @@
+.page {
+  text-align: center;
+  .page-categoryName {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    @include sp {
+      font-size: 16px;
+    }
+  }
+
+  .category-wrapper {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    @include sp {
+      margin: 0 auto;
+    }
+    ul.category-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 16px 0 0 0;
+      li {
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 0 8px;
+        @include sp {
+          margin: 0 0 0 4px;
+        }
+        @include sp-se {
+          margin: 0 0 0 2px;
+        }
+        a {
+          display: block;
+          color: var(--color_font01);
+          text-decoration: none;
+          padding: 6px 12px;
+          @include sp {
+            padding: 4px 8px;
+          }
+          @include sp-se {
+            padding: 3px 6px;
+          }
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+        }
+        &:hover:not(.active)::before {
+          background-color: var(--color_sub01);
+          opacity: 0.24;
+        }
+        &.active {
+          font-weight: bold;
+          background-color: var(--color_sub02);
+          a {
+            cursor: default;
+            color: var(--color_font02);
+          }
+        }
+      }
+    }
+  }
+  .posts {
+    // 48 / 1080
+    $negaLeft: 4.44444444%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: calc(100% + #{$negaLeft});
+    margin: -32px auto 0 -#{$negaLeft};
+    @include iPad {
+      justify-content: space-between;
+      max-width: 680px;
+      width: 100%;
+      margin: 48px auto 0;
+      @include sp {
+        max-width: 320px;
+      }
+    }
+    a.post {
+      position: relative;
+      width: calc(328px - (8px * 2));
+      width: calc(29.0780142% - (8px * 2));
+      text-align: left;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      color: var(--color_font01);
+      background: var(--color_font02);
+      border-bottom: solid 4px var(--color_sub01);
+      margin: 80px 0 0 4.25531915%;
+      padding: 0 8px 16px;
+      transition: $ct;
+      @include iPad {
+        margin: 48px 0 0;
+        width: calc(50% - (12px + 8px * 2));
+        padding: 0 8px 16px;
+        @include sp {
+          width: 100%;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+      .thumb {
+        width: calc(100% + (8px * 2));
+        margin: 0 -8px;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 132%;
+        }
+      }
+      .post-text {
+        position: relative;
+        width: calc(100% - (0px * 2));
+        padding: 12px 0px 16px;
+        .post-time {
+          font-size: 14px;
+          letter-spacing: 2px;
+          padding-left: 18px;
+          &::before {
+            width: 14px;
+            height: 14px;
+            transition: $ct;
+          }
+        }
+        .post-time + .post_list_title {
+          margin-top: 12px;
+        }
+        .post_list_title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          font-size: 22px;
+          font-weight: 700;
+          line-height: 28px;
+          // @include text-truncate(22, bold, 1.5, 0, 2, var(--color_font02));
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          // white-space: nowrap;
+          width: 100%;
+          max-height: 56px;
+          @include iPad {
+            font-size: 20px;
+          }
+        }
+      }
+      .post-text + .postTag-list {
+        margin-top: auto;
+        // margin-top: 8px;
+      }
+      .postTag-list {
+        .post_tags {
+          margin: 6px 6px 0 0;
+          padding: 8px 12px 6px;
+        }
+      }
+      &:hover {
+        color: var(--color_sub01);
+        transform: translate(0%, calc(0% + 4px));
+        time.post-time {
+          &::before {
+            background-color: var(--color_sub01);
+          }
+        }
+        .thumb {
+          img {
+            width: 124%;
+          }
+        }
+      }
+    }
+  }
+}

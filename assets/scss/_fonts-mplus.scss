@@ -1,0 +1,31 @@
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: otf ttf) {
+  $src: null;
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype",
+  );
+
+  @each $ext in $exts {
+    $format: map-get($formats, $ext);
+    $src: append($src, url(quote($path)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@include font-face("m-plus", "~assets/fonts/mplus-1p-light.ttf", 100, lighter, ttf);
+@include font-face("m-plus", "~assets/fonts/mplus-1p-regular.ttf", 300, normal, ttf);
+@include font-face("m-plus", "~assets/fonts/mplus-1p-medium.ttf", 500, medium, ttf);
+@include font-face("m-plus", "~assets/fonts/mplus-1p-bold.ttf", 700, bolder, ttf);
+@include font-face("m-plus", "~assets/fonts/mplus-1p-heavy.ttf", 800, null, ttf);
+@include font-face("m-plus", "~assets/fonts/mplus-1p-black.ttf", 900, null, ttf);
+
+body {
+  font-family: "m-plus", Arial, Helvetica, sans-serif;
+}

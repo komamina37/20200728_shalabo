@@ -1,0 +1,19 @@
+[{
+    "title": "ほげ",
+    "category": "HTML",
+    "tags": ["タグ1", "タグ2"],
+    "date": "2019-1-30",
+    "content": "## タイトル\n\n",
+    "slug": "post-hoge",
+    "id": 1
+  },
+  {
+    "title": "ふが",
+    "category": "CSS",
+    "tags": ["タグ1", "タグ2"],
+    "date": "2019-1-30",
+    "content": "## タイトル\n\n",
+    "slug": "post-fuga",
+    "id": 2
+  }
+]

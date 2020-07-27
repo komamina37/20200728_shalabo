@@ -1,0 +1,227 @@
+:root {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  transition: 0.3s;
+  transition: $ct;
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transition-timing-function: 0s;
+  color: var(--color_font01);
+  &.onModal {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+b {
+  margin: 0 0.2em;
+  &:not([class]) {
+    font-weight: bold;
+  }
+}
+
+img {
+  vertical-align: top;
+}
+
+br._pc,
+br._tab,
+br._sp {
+  display: none;
+}
+@include pc {
+  br._pc {
+    display: block;
+  }
+}
+@include iPad {
+  br._tab {
+    display: block;
+  }
+}
+@include sp {
+  br._sp {
+    display: block;
+  }
+}
+
+::selection {
+  background: var(--color_sub01);
+  color: var(--color_font02);
+}
+
+//Firefox
+::-moz-selection {
+  background: var(--color_sub01);
+  color: var(--color_font02);
+}
+
+#wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: calc(100vh - (64px));
+  padding-top: 64px;
+  overflow: hidden;
+
+  .page-enter {
+    opacity: 0;
+  }
+  .page-enter-active {
+    transition: opacity 0.7s;
+  }
+
+  .contents {
+    flex: 1;
+    // filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    // -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+  }
+}
+
+time.post-time {
+  position: relative;
+  font-size: 16px;
+  color: var(--color_sub01);
+  letter-spacing: 4px;
+  padding: 0 0 0 28px;
+  opacity: 0.8;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 0;
+    top: 48%;
+    display: inline-block;
+    background-color: var(--color_sub01);
+    mask-image: url(~assets/images/common/icon/icon-datetime.svg);
+    -webkit-mask-image: url(~assets/images/common/icon/icon-datetime.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 100%;
+    width: 20px;
+    height: 20px;
+    margin: 0px 8px 0 0;
+  }
+}
+
+.list-title {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color_font01);
+  padding: 4px 0;
+  @include iPad {
+    background-color: inherit;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: calc(12px + 2px);
+  }
+  span {
+    position: relative;
+    z-index: 10;
+    padding: 0 12px 0 24px;
+    @include iPad {
+      background-color: inherit;
+      padding: 0 0 0 28px;
+      &::after {
+        transform: translate(-50%, -50%);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        display: inline-block;
+        background-color: #578ea3;
+        background-color: var(--color_sub01);
+        width: calc(100% - (16px * 2));
+        height: 2px;
+      }
+      @include sp {
+        padding: 0 0 0 8px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      transform: translate(0, -50%);
+      left: 0;
+      top: 48%;
+      display: inline-block;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-position: center;
+      mask-size: 100%;
+      background-color: var(--color_sub02);
+      width: 20px;
+      height: 20px;
+      margin: 0px 8px 0 0;
+      @include sp {
+        left: -16px;
+      }
+    }
+  }
+  &._sort span::before {
+    mask-image: url(~assets/images/common/icon/icon-sort.svg);
+    -webkit-mask-image: url(~assets/images/common/icon/icon-sort.svg);
+  }
+  &._tag span::before {
+    mask-image: url(~assets/images/common/icon/icon-tag.svg);
+    -webkit-mask-image: url(~assets/images/common/icon/icon-tag.svg);
+  }
+}
+
+.post_unknown {
+  margin-top: 32px;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  @include iPad {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.back_btn_wrapper {
+  display: block;
+  text-align: center;
+  width: 100%;
+  .back_btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color_font01);
+    text-decoration: none;
+    margin: 120px auto 0;
+    @include sp {
+      margin-top: 80px;
+    }
+  }
+}
+
+._bb {
+  position: relative;
+  color: var(--color_font01);
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  &::after {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 50%;
+    display: inline-block;
+    background-color: var(--color_sub02);
+    width: calc(100% - (16px * 2));
+    height: 2px;
+  }
+}
